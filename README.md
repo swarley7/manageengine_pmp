@@ -8,6 +8,8 @@ PMP uses a bunch of cryptographic hand waving to hide the contents of the passwo
 
 1. Pad a static, randomly generated 16 byte password to 32 bytes with space characters
 2. Use PBKDF2 with 1024 rounds and the 32 byte password to generate a 32 byte AES Key
+	- The IV is static of course: {1,2,3,4,5,6,7,8}
+	- lol 	
 3. Using AES CTR with a 256 bit key encrypt the user's cleartext secret
 4. Base64 encode the secret
 5. insert base64 encoded secret into the database and encrypt again using built-in mysql encryption with a static, randomly generated key
