@@ -24,10 +24,12 @@ The Python program included (pmp_dump.py) requires some configuration (check the
 	- `grep -ir AES_ENCRYPT /path/to/PMP/`
 	- Look for items like:
 ```
-INSERT INTO `Ptrx_UserAudit` (`AUDITID`,`RESOURCENAME`,`NAME`,`OPERATEDBY`,`LOGINNAME`,`USERNAME`,`USER`,`LASTACCESSEDTIME`,`IPADDRESS`,`OPERATIONTYPE`,`REASON`,`OSTYPE`,`RESOURCEID`,`ACCOUNTID`) VALUES (64,AES_ENCRYPT('N/A',"<PASSWORD_HERE_STEAL_THIS_OK>"),'...
+INSERT INTO `Ptrx_UserAudit` (`AUDITID`,`RESOURCENAME`,`NAME`,`OPERATEDBY`,`LOGINNAME`,`USERNAME`,
+`USER`,`LASTACCESSEDTIME`,`IPADDRESS`,`OPERATIONTYPE`,`REASON`,`OSTYPE`,
+`RESOURCEID`,`ACCOUNTID`) VALUES (64,AES_ENCRYPT('N/A',"<PASSWORD_HERE_STEAL_THIS_OK>"),'...
 ```
- 	- It could also be in the indata1 innodb file as well, if you can figure out a way to mount that.
- 	- The password HAS to be somewhere, it's just a matter of finding it :D
+  - It could also be in the indata1 innodb file as well, if you can figure out a way to mount that.
+  - The password HAS to be somewhere, it's just a matter of finding it :D
 
 ### Usage
 Install dependencies:
